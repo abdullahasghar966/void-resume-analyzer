@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   VOID BIOLUMINESCENCE — design tokens
+   ============================================================ */
+:root {
+  --void-base: #060a10;
+  --void-deep: #03050a;
+  --void-mid: #0e1520;
+  --void-surface: #141d2e;
+  --void-text: #c8d6e8;
+  --void-muted: #4a5e78;
+  --bio-green: #00ffb2;
+  --bio-green-dim: rgba(0, 255, 178, 0.125);
+  --indigo-pulse: #7b61ff;
+  --indigo-dim: rgba(123, 97, 255, 0.094);
+  --danger-red: #ff4757;
+  --warn-amber: #ffd32a;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--void-base);
+    color: var(--void-text);
+    font-family: "DM Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* The scroll container owns vertical scrolling, not the body. */
+    overflow: hidden;
+  }
+
+  /* Hide the native cursor only where a real one exists (skip touch). */
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--bio-green-dim);
+    color: var(--bio-green);
+  }
+
+  /* Void-themed scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--void-deep);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 178, 0.18);
+    border-radius: 6px;
+    border: 2px solid var(--void-deep);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 178, 0.32);
+  }
+}
+
+@layer components {
+  /* Mid-layer glassmorphic surface (cards, drop zone). */
+  .glass {
+    background: rgba(14, 21, 32, 0.65);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 0.5px solid rgba(0, 255, 178, 0.08);
+  }
+
+  /* Deeper inset surface tinted toward the AI/indigo channel. */
+  .glass-deep {
+    background: rgba(3, 5, 10, 0.72);
+    backdrop-filter: blur(20px) saturate(130%);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
+    border: 0.5px solid rgba(123, 97, 255, 0.1);
+  }
+
+  .terminal {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .text-glow-bio {
+    text-shadow: 0 0 12px rgba(0, 255, 178, 0.45);
+  }
+  .perspective-deck {
+    perspective: 1200px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Global reduced-motion safety net. Components also guard imperatively with
+   useReducedMotion(); this neutralises any stray CSS-keyframe motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

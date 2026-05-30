@@ -1,0 +1,29 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+# env
+.env
+.env.local
+.env.*.local
+
+# logs
+*.log
+npm-install.log
+npm-debug.log*
+
+# build info
+node_modules/.tmp
+*.tsbuildinfo
+
+# editor / os
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# claude code local
+.claude/
+agentdb.rvf
+agentdb.rvf.lock
