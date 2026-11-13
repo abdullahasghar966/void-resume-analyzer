@@ -27,3 +27,5 @@ node_modules/.tmp
 .claude/
 agentdb.rvf
 agentdb.rvf.lock
+
+.vercel

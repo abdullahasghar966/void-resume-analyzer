@@ -3,9 +3,9 @@ import {
   scoreRequestSchema,
   scoreResultSchema,
   type ScoreResultDTO,
-} from "../schemas";
-import { heuristicScore } from "../lib/scoreEngine";
-import { getLLMConfig } from "../lib/ai";
+} from "../schemas.js";
+import { heuristicScore } from "../lib/scoreEngine.js";
+import { getLLMConfig } from "../lib/ai.js";
 
 export const scoreRouter = Router();
 

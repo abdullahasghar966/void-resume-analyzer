@@ -3,9 +3,9 @@ import {
   matchRequestSchema,
   matchResultSchema,
   type MatchResultDTO,
-} from "../schemas";
-import { heuristicMatch } from "../lib/matchEngine";
-import { getLLMConfig } from "../lib/ai";
+} from "../schemas.js";
+import { heuristicMatch } from "../lib/matchEngine.js";
+import { getLLMConfig } from "../lib/ai.js";
 
 export const matchRouter = Router();
 

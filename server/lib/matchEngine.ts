@@ -1,5 +1,5 @@
-import type { MatchResultDTO } from "../schemas";
-import { ACTION_VERBS, sentences, stem, tokenize, topTerms } from "./textUtils";
+import type { MatchResultDTO } from "../schemas.js";
+import { ACTION_VERBS, sentences, stem, tokenize, topTerms } from "./textUtils.js";
 
 /**
  * Deterministic résumé↔JD matcher (no API key required). Classifies the JD's

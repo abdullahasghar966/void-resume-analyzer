@@ -1,7 +1,7 @@
 import { Router, type Request, type Response } from "express";
-import { chatRequestSchema } from "../schemas";
-import { buildSystemPrompt, coachAnswer } from "../lib/coachFallback";
-import { getLLMConfig } from "../lib/ai";
+import { chatRequestSchema } from "../schemas.js";
+import { buildSystemPrompt, coachAnswer } from "../lib/coachFallback.js";
+import { getLLMConfig } from "../lib/ai.js";
 
 export const chatRouter = Router();
 

@@ -7,8 +7,8 @@ import {
   extractPdf,
   extractTxt,
   type Extracted,
-} from "../lib/extractText";
-import { parseResultSchema, type FileTypeDTO } from "../schemas";
+} from "../lib/extractText.js";
+import { parseResultSchema, type FileTypeDTO } from "../schemas.js";
 
 const MAX_MB = Number(process.env.MAX_FILE_SIZE_MB ?? 5);
 const MAX_BYTES = MAX_MB * 1024 * 1024;

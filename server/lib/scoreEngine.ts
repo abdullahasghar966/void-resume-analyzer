@@ -1,5 +1,5 @@
-import type { ScoreResultDTO } from "../schemas";
-import { ACTION_VERBS, tokenize, topTerms } from "./textUtils";
+import type { ScoreResultDTO } from "../schemas.js";
+import { ACTION_VERBS, tokenize, topTerms } from "./textUtils.js";
 
 /**
  * Deterministic, no-API-key résumé scorer. Produces believable, input-sensitive

@@ -1,4 +1,4 @@
-import type { ChatContextDTO } from "../schemas";
+import type { ChatContextDTO } from "../schemas.js";
 
 /**
  * Builds the résumé-aware system prompt for the real LLM (brief: "context
