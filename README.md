@@ -1,5 +1,7 @@
 # VOID · Resume Intelligence Terminal
 
+**🔗 Live site:** [void-resume-analyzer.vercel.app](https://void-resume-analyzer.vercel.app) — scoring and matching use the built-in engines; no AI key required
+
 An AI-powered résumé analyzer with a *Void Bioluminescence* interface — a deep-ocean intelligence terminal. React + Vite + Three.js front end, Express + Zod back end.
 
 > **Status:** All four modules are built and verified — 3D Quantum Drop Zone & Parser, Scroll-Linked Score Matrix, Split-Screen Semantic Matcher, and the Floating AI Coach.
